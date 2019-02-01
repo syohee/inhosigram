@@ -12,7 +12,7 @@
     <div>
       
       <div class="top">
-        <%= link_to image_tag("/assets/inhosigram.PNG"), root_path, class: "top_logo" %>
+        <%= link_to image_tag("inhosigram.PNG"), root_path, class: "top_logo" %>
         <div class="top_user">
           <% if logged_in? %>
             <%= link_to 'new', new_picture_path %>
