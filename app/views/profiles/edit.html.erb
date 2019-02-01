@@ -1,0 +1,12 @@
+<%= form_with(model: @profile, local: true, url: profile_path) do |form| %>
+
+  <div>
+    <%= form.file_field :image %> 
+    <%= form.hidden_field :image_cache %>
+  </div>
+  
+  <%= form.submit %>
+  
+<% end %>
+
+<%= link_to 'back', user_path %>

@@ -1,0 +1,31 @@
+
+<% @picture.each do |picture| %>
+  <div class="picture">
+    <div class="picture_user">
+      <%= image_tag current_user.profile.image.url if defined?(current_user.id) && current_user.profile.image.url %>
+      <%= picture.user.name %>
+    </div>
+    
+    <div class="picture_image"><%= image_tag picture.image.url if picture.image.url %></div>
+    
+    <div class="picture_bottom">
+      <div class="picture_option">
+        <%= link_to 'show', picture_path(picture.id) %>
+      
+        <% if defined?(current_user.id) %>
+          <% if picture.user_id == current_user.id %>
+            <%= link_to 'edit', edit_picture_path(picture.id) %>
+            <%= link_to 'delete', picture_path(picture.id), method: :delete %>
+          <% end %>
+        <% end %>
+      </div>
+      
+      <div class="picture_bottom_user"><%= picture.user.name %></div>
+      <div class="picture_content"><%= picture.content %></div>
+      
+      
+    </div>
+  </div>
+  
+<% end %>  
+

@@ -1,0 +1,36 @@
+<div class="profile">
+  <div class="profile_image"><%= image_tag @profile.image.url if @profile.image.url%></div>
+  <span class="profile_user"><%= @user.name %></span>
+  
+  <span class="profile_edit">
+    <% if defined?(current_user.id) %>
+      <% if @profile.user_id == current_user.id %>
+        <%= link_to 'Profile Edit', edit_profile_path(@profile.id), class: 'button' %>
+      <% end %>
+    <% end %>
+  </span>
+  
+  <div class="profile_email"><%= @user.email %></div>
+</div>
+
+<div class="line">Favorite pictures</div>
+  
+<% @favorite_pictures.each do |favorites_pictures| %>
+  <div class="picture">
+    <div class="picture_user">
+      <%= image_tag favorites_pictures.user.profile.image.url if favorites_pictures.user.profile.image.url%>
+      <%= favorites_pictures.user.name %>
+    </div>
+    
+    <div class="picture_image"><%= image_tag favorites_pictures.image.url if favorites_pictures.image.url%></div>
+    
+    <div class="picture_bottom">
+      <div class="picture_option"><%= link_to 'show', picture_path(favorites_pictures.id) %></div>
+      
+      <div class="picture_bottom_user"><%= favorites_pictures.user.name %></div>
+      <div class="picture_content"><%= favorites_pictures.content %></div>
+        
+    </div>
+  </div>
+<% end %>
+

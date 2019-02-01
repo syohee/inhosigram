@@ -1,0 +1,38 @@
+// Place all the styles related to the user controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile { height: 150px;}
+
+@media (max-width: 735px){
+  .profile {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 736px){
+  .profile {
+    margin-bottom: 44px;
+  }
+}
+
+.profile_image { width: 150px; height: 150px; border-radius: 50%; overflow: hidden; float: left; margin-right: 100px; border: 1px solid #e6e6e6}
+.profile_image img { width: 100%; height: 100%; }
+
+@media (max-width: 735px){
+  .profile_image{
+    height: 77px;
+    width: 77px;
+    margin-right: 28px;
+  }
+}
+
+.profile_user { font-size: 28px; }
+.profile_edit { margin: 20px; }
+.profile_edit a { text-align: center;}
+
+.line { height: 20px; width: 100%; border-bottom: 1px solid #e6e6e6; margin-bottom: 60px; padding-bottom: 30px; color: gray; padding-left: 15px;}
+
+.sign_up { width: 300px; margin: auto }

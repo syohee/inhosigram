@@ -1,0 +1,22 @@
+<%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
+  
+  <div class="picture">
+    <div class="picture_image"><%= image_tag @picture.image.url if @picture.image.url %></div>
+    <div class="picture_bottom">
+      <div class="picture_bottom_user"><%= @picture.user.name %></div>
+      <div class="picture_content"><%= @picture.content %></div>
+    </div>
+  </div>
+  <%= form.submit "submit", class: 'button confirm_submit' %>
+<% end %>
+
+<%= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit 'back', name: 'back', class: 'button confirm_back' %>
+<% end %>
+
+
+
