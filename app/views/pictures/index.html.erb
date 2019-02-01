@@ -2,7 +2,7 @@
 <% @picture.each do |picture| %>
   <div class="picture">
     <div class="picture_user">
-      <%= image_tag current_user.profile.image.url if defined?(current_user.id) && current_user.profile.image.url %>
+      <%= image_tag picture.user.profile.image.url if picture.user.profile.image.url %>
       <%= picture.user.name %>
     </div>
     
