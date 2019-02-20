@@ -1,10 +1,15 @@
+<script type="text/javascript" src="/assets/preview.js"></script>
 <div class="form">
 <%= form_with(model: @profile, local: true, url: profile_path) do |form| %>
-
+  <div class="image_box">
   
-  <label class="upload_label"> File Select
-    <span class="upload_image"><%= form.file_field :image %></span> 
-  </label>
+
+    <label for="image_upload" class="preview_profile"> 
+      <div class="label_text">Choose File</div>
+      <div class="preview_image"><%= image_tag @profile.image.url if @profile.image.url %></div>
+      <span class="upload_image"><%= form.file_field :image, id: 'image_upload' %></span> 
+    </label>
+  </div>
   <%= form.hidden_field :image_cache %>
   
   <%= form.submit class: 'button' %>

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 }, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   
   has_secure_password
-  before_validation { name.downcase! }
+  before_validation { email.downcase! }
   
   has_many :pictures
   has_one :profile
