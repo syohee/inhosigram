@@ -1,5 +1,6 @@
 
 <% @picture.each do |picture| %>
+<div class="col-xs-12 col-md-6">
   <div class="picture">
     <div class="picture_user">
       <%= image_tag picture.user.profile.image.url if picture.user.profile.image.url %>
@@ -26,6 +27,6 @@
       
     </div>
   </div>
-  
+  </div>
 <% end %>  
 
